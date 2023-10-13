@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mooli', sans-serif;
+}
+
+.conteiner {
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteiner video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+nav.logo {
+    display: flexbox;
+    width: 100%;
+    text-decoration: none;
+    font-size: 40px;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+}
+
+nav .logo a {
+    text-decoration: none;
+    font-size: 40px;
+    z-index: 2;
+    width: 100%;
+    display: flexbox;
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+
+}
+
+nav ul li {
+    padding: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+}
+
+nav ul button {
+    border: none;
+    background-color: rgb(50, 5, 62);
+    color: white;
+    padding: 20px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-left: 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* CSS para telas grandes (largura maior que 970px) */
+@media screen and (min-width: 971px) {
+    .text-bx {
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        /* Alterado para 'block' para exibir o elemento */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 30%;
+        height: 70%;
+        padding: 20px;
+        overflow: hidden;
+    }
+}
+
+/* CSS para telas médias (largura entre 768px e 970px) */
+@media screen and (max-width: 970px) {
+    .text-bx {
+        display: none;
+        /* Ocultar o elemento em telas médias */
+    }
+}
+
+/* CSS para telas pequenas (largura menor ou igual a 768px) */
+@media screen and (max-width: 768px) {
+    .text-bx {
+        display: none;
+        /* Ocultar o elemento em telas pequenas */
+    }
+}
+
+.text-bx h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.text-bx h1 b {
+    color: white;
+}
+
+.text-bx p {
+    color: white;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.text-bx .input-bx {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-bx .input-bx input {
+    width: 100%;
+    display: flex;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: #8997b9;
+    font-size: 16px;
+}
+
+.text-bx .input-bx input::placeholder {
+    color: #8997b9;
+}
+
+.text-bx .input-bx button {
+    outline: none;
+    border: none;
+    padding: 20px 20px;
+    background-color: rgb(50, 5, 62);
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.medias-socias {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+    z-index: 3;
+}
+
+.medias-socias a {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.medias-socias i {
+    font-size: 23px;
+    color: white;
+    background-color: rgb(50, 5, 62);
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.img-bx {
+    width: 60%;
+}
+
+.img-bx img {
+    width: 100%;
+}
+
+@media (max-width: 970px) {
+    nav .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 60%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.3s ease-in;
+        background-color: rgba(0,0,0,0.3);
+        z-index: 2;
+    }
+
+    nav ul.active {
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        padding: 10px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        color: white;
+    }
+
+    nav ul button {
+        background-color: rgb(50, 5, 62);
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .text-bx,
+    .img-bx {
+        width: 100%;
+        text-align: center;
+    }
+
+    .text-bx {
+        margin-bottom: 40px;
+    }
+
+    .text-bx .input-bx {
+        justify-content: center;
+    }
+}
+/* parte do cc do modal */
+#login-form
+{
+    display: none;
+}
+.form-box
+{
+    width:380px;
+	height:480px;
+	position:relative;
+	margin:30% auto;
+	background:rgba(0,0,0,0.3);
+	padding:10px;
+    overflow: hidden;
+    z-index: 999;
+}
+.button-box
+{
+	width:220px;
+	margin:35px auto;
+	position:relative;
+	box-shadow: 0 0 20px 9px white;
+	border-radius: 30px;
+}
+.toggle-btn
+{
+	padding:10px 30px;
+	cursor:pointer;
+	background:transparent;
+	border:0;
+	outline: none;
+	position: relative;
+    color: white;
+}
+#btn
+{
+	top: 0;
+	left:0;
+	position: absolute;
+	width: 110px;
+	height: 100%;
+	background: rgb(50, 5, 62);
+	border-radius: 30px;
+	transition: .5s;
+}
+.input-group-login
+{
+	top: 150px;
+	position:absolute;
+	width:280px;
+	transition:.5s;
+    color: white;
+    
+}
+.input-group-register
+{
+    top: 120px;
+	position:absolute;
+	width:280px;
+	transition:.5s;
+    color: white;
+}
+.input-field
+{
+	width: 100%;
+	padding:10px 0;
+	margin:5px 0;
+	border-left:0;
+	border-top:0;
+	border-right:0;
+	border-bottom: 1px solid white;
+	outline:none;
+	background: transparent;
+}
+.submit-btn
+{
+	width: 100%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	background: rgb(50, 5, 62);
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+    color: white;
+}
+.check-box
+{
+	margin: 30px 10px 34px 0;
+}
+span
+{
+	color:white;
+	font-size:12px;
+	bottom:68px;
+	position:absolute;
+}
+#login
+{
+	left:50px;
+}
+#login input
+{
+	color:white;
+	font-size:15;
+}
+#register
+{
+	left:450px;
+}
+#register input
+{
+	color:white;
+	font-size: 15;
+}

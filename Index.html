@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css"> <!-- Importa o arquivo de estilo externo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Importa os ícones FontAwesome -->
+    <title>AnimaKu</title>
+</head>
+
+<body>
+
+    <div class="conteiner">
+        <!-- Início da seção principal do site -->
+
+        <!-- Elemento de vídeo em segundo plano -->
+        <video autoplay loop>
+            <source src="imagens/mylivewallpapers.com-Beru-Solo-Levelling.mp4" type="video/mp4">
+        </video>
+
+        <!-- Barra de navegação -->
+        <nav>
+            <div class="logo">
+                <a href="Index.html"> AnimaKu </a> <!-- Link para a página inicial -->
+            </div>
+            <ul>
+                <li><a href="Index.html">Home</a></li> <!-- Link para a página inicial -->
+                <li><a href="#">Lista</a></li> <!-- Link para a página de lista -->
+                <li><button class='loginbtn' id="toggleButton" style="width:auto;">Cadastro/Login</button></li> <!-- Botão para abrir o formulário de login/registro -->
+            </ul>
+            <div class="menu-icon">
+                <img src="imagens/lista-de-reproducao.png" alt=""> <!-- Ícone do menu de navegação -->
+            </div>
+        </nav>
+
+        <!-- Formulário de Login/Registro -->
+        <div id='login-form' class='login-page' style="display: none;">
+            <!-- Cria a caixa do formulário -->
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button' onclick='login()' class='toggle-btn'>Log In</button> <!-- Botão para abrir o formulário de login -->
+                    <button type='button' onclick='register()' class='toggle-btn'>Register</button> <!-- Botão para abrir o formulário de registro -->
+                </div>
+
+                <!-- Formulário de Login -->
+                <form id='login' class='input-group-login'>
+                    <input type='text' class='input-field' placeholder='Email Id' required>
+                    <input type='password' class='input-field' placeholder='Enter Password' required>
+                    <input type='checkbox' class='check-box'><span>Remember Password</span>
+                    <button type='submit' class='submit-btn'>Login</button>
+                </form>
+
+                <!-- Formulário de Registro -->
+                <form id='register' class='input-group-register'>
+                    <input type='text' class='input-field' placeholder='First Name' required>
+                    <input type='text' class='input-field' placeholder='Last Name ' required>
+                    <input type='email' class='input-field' placeholder='Email Id' required>
+                    <input type='password' class='input-field' placeholder='Enter Password' required>
+                    <input type='password' class='input-field' placeholder='Confirm Password' required>
+                    <input type='checkbox' class='check-box'><span>I agree to the terms and conditions</span>
+                    <button type='submit' class='submit-btn'>Cadastro</button>
+                </form>
+                <!-- Estilo do formulário -->
+            </div>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <main>
+            <div class="text-bx">
+                <h1> Animes Recomendados <b> Que você talvez goste </b></h1>
+                <p>
+                    Uma lista com animes em alta que podemos recomendar que assista. Digite o seu email e te mandaremos
+                    algumas opções de escolha.
+                </p>
+                <div class="input-bx">
+                    <input type="email" placeholder="Endereço de email">
+                    <button>Desejo receber as recomendações</button>
+                </div>
+            </div>
+
+            <!-- Ícones das redes sociais -->
+            <div class="medias-socias">
+                <a href="#"> <i class="fa fa-instagram"></i> </a>
+                <a href="#"> <i class="fa fa-facebook"></i> </a>
+                <a href="#"> <i class="fa fa-twitter"></i> </a>
+                <a href="#"> <i class="fa fa-youtube-play"></i> </a>
+                <a href="#"> <i class="fa fa-whatsapp"></i> </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('btn');
+        var loginForm = document.getElementById('login-form');
+        var toggleButton = document.getElementById('toggleButton');
+
+        function toggleForm() {
+            if (loginForm.style.display === 'block') {
+                loginForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'block';
+            }
+        }
+
+        // Função para abrir o formulário de login
+        function login() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '0px';
+            loginForm.style.display = 'block'; // Abre o formulário
+        }
+
+        // Função para abrir o formulário de registro
+        function register() {
+            x.style.left = '-400px';
+            y.style.left = '50px';
+            z.style.left = '110px';
+            loginForm.style.display = 'block'; // Abre o formulário
+        }
+
+        // Adiciona um ouvinte de evento de clique ao botão de alternância
+        toggleButton.addEventListener('click', toggleForm);
+
+        // Adiciona um ouvinte de evento de clique ao documento inteiro
+        document.addEventListener('click', function (event) {
+            // Verifica se o clique não ocorreu dentro do formulário ou do botão de alternância
+            if (!loginForm.contains(event.target) && event.target !== toggleButton) {
+                // Se o clique for fora do formulário, fecha o formulário
+                loginForm.style.display = 'none';
+            }
+        });
+    </script>
+
+    <script src="main.js"></script> <!-- Importa o arquivo JavaScript -->
+</body>
+
+</html>
